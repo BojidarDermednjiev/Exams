@@ -76,7 +76,7 @@
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append($"{Brand} {Model} License plate: {LicensePlateNumber} Battery: {BatteryLevel}%");
+            sb.AppendLine($"{Brand} {Model} License plate: {LicensePlateNumber} Battery: {BatteryLevel}%");
             sb.Append(IsDamaged == true ? " Status: damage" : " Status: OK");
             return sb.ToString().TrimEnd();
         }
