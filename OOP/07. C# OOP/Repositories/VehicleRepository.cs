@@ -1,10 +1,9 @@
-﻿using EDriveRent.Models.Contracts;
-using EDriveRent.Repositories.Contracts;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace EDriveRent.Repositories
+﻿namespace EDriveRent.Repositories
 {
+    using System.Linq;
+    using System.Collections.Generic;
+    using Contracts;
+    using Models.Contracts;
     public class VehicleRepository : IRepository<IVehicle>
     {
         private readonly List<IVehicle> vehicles;
