@@ -1,0 +1,326 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1 {
+    font-weight: bold;
+    margin-left: 6em;
+}
+header h1 span{
+    color: #2ba5b7;
+}
+header nav{
+    margin-right: 10em;
+}
+header nav ul{
+    display: flex;
+    gap: 3.5em;
+}
+header nav ul li a{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+header nav ul li a:hover{
+    border-bottom: 3px solid #008cba;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.first{
+    width: 100%;
+    height: 735px;
+    background-image: url(images/slide2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.first div::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: #000;
+    opacity: 0.3;
+    z-index: -1;
+}
+.first div{
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    position: relative;
+    height: 200px;
+    color: white;
+    z-index: 1;
+    padding: 0.5em 1em;
+    margin-right: 55%;
+}
+.first div h2{
+    text-align: start;
+    font-weight: bold;
+    font-size: 34px;
+}
+.first div a{
+    width: 55%;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    font-size: 24px;
+    border-radius: 2em;
+    color: white;
+    background: #008cba;
+    margin-top: 1em;
+    cursor: pointer;
+}
+.second{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    margin-bottom: 9em;
+}
+.second h2{
+    text-align: center;
+    font-size: 34px;
+    font-weight: normal;
+}
+.second .line{
+    align-items: center;
+    width: 130px;
+    height: 3px;
+    position: relative;
+}
+.second .line::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: #008cba;
+    border-radius: 6px;
+}
+.second p{
+    margin: 1.6em 0em;
+    text-align: center;
+    font-size: 20px;
+}
+.second a{
+    background: #454545;
+    padding: 0.3em 1em;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 2em;
+}
+.third{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 9em;
+}
+.third h2{
+    font-size: 34px;
+}
+.third .line{
+    align-items: center;
+    width: 130px;
+    height: 3px;
+    position: relative;
+    
+}
+.third .line::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: black;
+    border-radius: 6px;
+}
+.third .cards{
+    width: 100%;
+    margin-top: 4em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: 1 1 30%;
+    gap: 2em;
+}
+.third .cards .card{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1em;
+    overflow: hidden;
+}
+.third .cards .card img{
+    width: 100%;
+    object-fit: contain;
+}
+.third .cards .card h2{
+    font-size: 26px;
+    font-weight: normal;
+    margin: 1em 0em;
+}
+.third .cards .card p{
+    text-align: center;
+    padding: 0em 1em;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 1em;
+}
+.third .cards .card a{
+    background: #454545;
+    padding: 0.2em 0.7em;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-bottom: 1em;
+}
+.fourth{
+    width: 100%;
+    background: #393f43;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.fourth h2{
+    font-weight: normal;
+    margin-top: 1em;
+}
+.fourth .line{
+    align-items: center;
+    width: 120px;
+    height: 3px;
+    position: relative;
+    margin-bottom: 1em;
+}
+.fourth .line::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: white;
+    border-radius: 6px;
+}
+.fourth p{
+    font-weight: normal;
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 1.4em;
+}
+.fourth form{
+    display: flex;
+    gap: 0.4em;
+    align-items: center;
+    margin-bottom: 3.5em;
+}
+.fourth form label{
+    display: none;
+}
+.fourth form input{
+    width: 25em;
+    height: 40px;
+    border-radius: 0.4em;
+    background: #545a5e;
+}
+.fourth form .btn{
+    background: #008cba;
+    padding: 0.1em 2em;
+    color: white;
+    font-size: 18px;
+    border: 1px solid #008cba;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0.4em;
+}
+.fifth{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background: #2f3539;
+    color: white;
+    font-size: 20px;
+}
+.fifth ul h4{
+    margin-top: 4em;
+    margin-bottom: 1em;
+}
+.fifth ul li:not(:last-child){
+    margin-bottom: 1em;
+}
+.fifth .quick{
+    margin-bottom: 100px;
+}
+.fifth .adress li:nth-child(2){
+    margin-bottom: 3em;
+}
+.fifth ul li a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.fifth .follow{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.fifth .follow h4{
+    text-align: start;
+    width: 100%;
+}
+.fifth .follow li{
+    text-align: end;
+}
+.fifth .follow  a{
+    cursor: pointer;
+}
+footer{
+    border: 1px solid #262b2f;;
+    margin-top: auto;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #262b2f;
+    color: white;
+    font-size: 18px;
+}
+footer span{
+    color: #008cba;
+}
+

@@ -1,0 +1,90 @@
+@media (max-width:600px){
+    body {
+        width: 865px;
+        max-width: none;
+    }
+    nav.site-navigation{
+        display: none;
+    }
+    .entry-header {
+        background:
+          url("./images/header-image.jpg") center center;
+      }
+      .site-main {
+        margin: 0;
+      }
+      .button-primary {
+        width: 25%;
+        text-align: center;
+      }
+      .site-logos-container {
+        margin-left: 13rem;
+        display: grid;
+        grid-template-columns: 200px 200px;
+        place-items: center;
+      }
+      .site-information-image {
+        display: none;
+      }
+      .site-information {
+        align-items: center;
+        justify-content: center;
+      }
+      .site-information-text {
+       text-align: center;
+      }
+      .entry-description {
+        width: 110%;
+      }
+      .site-form {
+        margin-top: 0;
+      }
+      form {
+        max-width: none;
+      }
+      .entry-title {
+        font-size: 10px;
+      }
+      .site-form label {
+        font-size: 28px;
+      }
+      .site-form form > p {
+        flex-direction: column;
+      }
+      .site-form input {
+        width: 90%;
+      }
+      .site-form button {
+        margin: auto;
+        font-size: 20px;
+        display: inline;
+        text-align: end;
+      }
+      .site-blog-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .site-posts {
+        width: 70%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .site-blog-container h5 {
+        font-size: 34px;
+      }
+      .site-blog-container h2.entry-title {
+        font-size: 64px;
+      }
+      .site-footer {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 28px;
+      }
+      .site-footer a{
+        font-size: 28px;
+      }
+    }

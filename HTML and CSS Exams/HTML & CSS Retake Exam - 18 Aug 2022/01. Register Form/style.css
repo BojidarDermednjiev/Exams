@@ -1,0 +1,147 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.background{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+.register{
+    width: 900px;
+    height: 700px;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.register .img-bg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+form{
+    width: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6.5em;
+    margin-left: 32px;
+}
+form h1{
+ font-size: 26px;
+ font-weight: bold;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ margin-bottom: 1em;
+}   
+div.name{
+    display: flex;
+    gap: 12px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+}
+.first-name label{
+    font-weight: normal;
+    color: gray;
+}
+.first-name input{
+    margin-top: 2px;
+    border-radius: 20px;
+    padding: 6px 0px;
+    border: 1px solid rgb(175, 175, 175);
+}
+.last-name label{
+    font-weight: normal;
+    color: gray;
+}
+.last-name input{
+    margin-top: 2px;
+    border-radius: 20px;
+    padding: 6px 0px;
+    border: 1px solid rgb(175, 175, 175);
+}
+.email{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+.email label{
+    font-weight: normal;
+    color: gray;
+}
+.email input{
+    margin-top: 2px;
+    border-radius: 20px;
+    padding: 6px 0px;
+    border: 1px solid rgb(175, 175, 175);
+}
+.password{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.first{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+.first label{
+    font-weight: normal;
+    color: gray;
+}
+.first input{
+    margin-top: 2px;
+    border-radius: 20px;
+    padding: 6px 0px;
+    border: 1px solid rgb(175, 175, 175);
+}
+.second{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+}
+.second label{
+    font-weight: normal;
+    color: gray;
+}
+.second input{
+    margin-top: 2px;
+    border-radius: 20px;
+    padding: 6px 0px;
+    border: 1px solid rgb(175, 175, 175);
+}
+.radio{
+    width: 100%;
+}
+.radio label{
+    font-weight: normal;
+    color: gray;
+}
+.radio input{
+    color: gray;
+}
+.btn button{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 2em;
+    padding: 8px 32px;
+    border-radius: 22px;
+    background: #ae3c33;
+    border: 1px solid #ae3c33;;
+    color: #e3d5ee;
+    cursor: pointer;
+}

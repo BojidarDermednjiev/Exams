@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.page{
+    width: 100vw;
+    height: 100vh;
+}
+.img-bg{
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+}
+.cards{
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+}
+div.cards article.card{
+    padding: 24px 48px;
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: black;
+}
+div.cards article.card h2 .title{
+    text-transform: uppercase;
+    display: block;
+    font-weight: bold;
+    padding-bottom: 24px;
+}
+div.cards article.card h2 .price{
+    display: block;
+    color: #638198;
+    font-weight: normal;
+    padding-bottom: 24px;
+    font-size: 18px;
+}
+div.cards article.card h2 .price span{
+ color: black;
+ font-weight: bold;
+ font-size: 48px;
+}
+div.cards article.card h4{
+    color: #bcbecb;
+    font-weight: normal;
+    font-size: 14px;
+    padding-bottom: 24px;
+}
+div.cards article.card .offerts{
+    color: black;
+    padding-bottom: 34px;
+}
+div.cards article.card .offerts li{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+div.cards article.card .offerts li:not(:last-child){
+    padding-bottom: 12px;
+}
+div.cards article.card .btn{
+    padding: 18px 32px;
+    color: white;
+    background: #000;
+    border-radius: 6px;
+    cursor: pointer;
+}
+div.cards article.card.promo{
+    transform: scale(1.1);
+    margin: auto 34px;
+}

@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    width: 900px;
+    height: 500px;
+    display: flex;
+    -webkit-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px -7px rgba(0,0,0,0.75);
+}
+.card .img::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    background: #000;
+    opacity: 0.8;
+    z-index: -1;
+}
+.card .img{ 
+    z-index: 1;
+    position: relative;
+    color: white;
+    padding: 2em 2em;
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-image: url(image/cover.jpg);
+}
+.card form{
+    width: 50%;
+}
+.rdy{
+    text-align: center;
+}
+.card .img p{
+ font-size: 20px;
+ font-weight: normal;
+ letter-spacing: 1px;
+ margin-bottom: 8em;
+}
+.card .img h1{
+    text-align: center;
+}
+.card .img ul{
+    display: flex;
+    width: 20%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10em;
+}
+.card .img ul li a{
+    text-decoration: none;
+    color: white;
+}
+.card form{
+    padding: 2em 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.card form label{
+    color: #d6d0d5;
+    width: 100%;
+}
+.card form input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cecece;
+}
+button{
+    cursor: pointer;
+    margin: auto;
+    padding: 0.2em 2em;
+    border-radius: 2em;
+    color: white;
+    background: #000;
+}
+.card form a{
+    margin: auto;
+    color: #a6a6a6;
+    cursor: pointer;
+}

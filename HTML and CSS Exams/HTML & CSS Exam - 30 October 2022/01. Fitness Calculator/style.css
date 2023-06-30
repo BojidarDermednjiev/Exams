@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+}
+.wrapper:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.986);
+    opacity: 0.3;
+    }
+body{
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    border: 1px solid black;
+    border-radius: 8px;
+    max-width: 1370px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    -webkit-box-shadow: 3px 11px 18px 4px rgba(92,92,92,1);
+    -moz-box-shadow: 3px 11px 18px 4px rgba(92,92,92,1);
+    box-shadow: 3px 11px 18px 4px rgba(92,92,92,1);
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.menu{
+    padding-top: 4em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+.menu h1{
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 2em;
+}
+div.button{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+}
+.menu button.btn{
+    padding: 8px 34px;
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn{
+    background: #e0e0df;
+}
+.btn.prime{
+    background: #86d862;
+}
+.menu h4{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+}
+.gender{
+    margin-left:50px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+.gender select{
+    padding-right: 8em;
+    border: 1px solid black;
+    text-align: start;
+}
+.gender input{
+    padding: 0px 14px;
+    border: 1px solid black;
+    margin-right: 2em;
+    border-radius: 4px;
+}
+.weight{
+    margin: 0 3em 2em 3em;
+    border: 1px solid black;
+}
+.height{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 3em;
+}
+.height input{
+    border: 1px solid gray;
+    padding-right: 6em;
+    border-radius: 6px;
+}
+.cal-btn{
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    padding: 4px 64px;
+    margin: 0px 34px;
+    border-radius: 14px;
+    background: #05a2d3;
+    border: 1px solid #05a2d3;
+    -webkit-box-shadow: 3px 11px 18px -3px rgba(92,92,92,1);
+    -moz-box-shadow: 3px 11px 18px -3px rgba(92,92,92,1);
+    box-shadow: 3px 11px 18px -3px rgba(92,92,92,1);
+}

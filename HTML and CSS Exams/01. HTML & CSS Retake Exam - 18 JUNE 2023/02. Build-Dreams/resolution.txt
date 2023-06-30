@@ -1,0 +1,1 @@
+resolution 600x1080
