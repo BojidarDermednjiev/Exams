@@ -10,7 +10,6 @@
             string inputLine = Console.ReadLine();
             var skill = new StringBuilder(inputLine);
             string inputLineFromConsole;
-            ;
             while ((inputLineFromConsole = Console.ReadLine()) != "For Azeroth")
             {
                 var command = inputLineFromConsole.Split();
