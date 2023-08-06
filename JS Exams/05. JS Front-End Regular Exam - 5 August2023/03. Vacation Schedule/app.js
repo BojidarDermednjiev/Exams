@@ -1,155 +1,144 @@
-const API_URL = "http://localhost:3030/jsonstore/tasks/";
+const API_URL = `http://localhost:3030/jsonstore/tasks/`;
+const loadVacations = document.getElementById(`load-vacations`);
+const container = document.querySelector(`list`);
 let vacations = {};
+const list = document.getElementById("list");
 const inputSelectors = {
   name: document.getElementById("name"),
   days: document.getElementById("num-days"),
   date: document.getElementById("from-date"),
 };
-const list = document.getElementById("list");
-const actionBtn = {
-  loadBtn: document.getElementById("load-vacations"),
-  addBtn: document.getElementById("add-vacation"),
-  editBtn: document.getElementById("edit-vacation"),
-};
-actionBtn.editBtn.addEventListener("click", editVacation);
-actionBtn.loadBtn.addEventListener("click", loadVacations);
-actionBtn.addBtn.addEventListener("click", addVacation);
-
-async function loadVacations() {
+const addVacation = document.getElementById(`add-vacation`);
+const editVacation = document.getElementById(`edit-vacation`);
+loadVacations.addEventListener(`click`, load);
+async function load(e) {
+  e.preventDefault();
   list.innerHTML = "";
   const responce = await (await fetch(API_URL)).json();
   Object.values(responce).forEach((x) => {
     vacations = Object.values(responce);
-    const divApplication = createElement(
-      "div",
-      list,
-      null,
+    const divContainer = createElement(
+      `div`,
+      false,
+      x._id,
       ["container"],
-      x._id
+      list
     );
-    createElement("h2", divApplication, x.name);
-    createElement("h3", divApplication, x.date);
-    createElement("h3", divApplication, x.days);
+    createElement(`h2`, x.name, false, [], divContainer);
+    createElement(`h3`, x.date, false, [], divContainer);
+    createElement(`h3`, x.days, false, [], divContainer);
+    const changeBtn = createElement(
+      `button`,
+      `Change`,
+      false,
+      ["change-btn"],
+      divContainer
+    );
+    const doneBtn = createElement(
+      `button`,
+      `Done`,
+      false,
+      ["done-btn"],
+      divContainer
+    );
+    changeBtn.addEventListener(`click`, (e) => {
+      const id = e.currentTarget.parentNode.id;
+      const currentVacation = vacations.find((x) => x._id == id);
+      Object.keys(inputSelectors).forEach((key) => {
+        inputSelectors[key].value = currentVacation[key];
+      });
+      e.currentTarget.parentNode.remove();
+      vacations.splice(vacations.indexOf(currentVacation), 1);
+      editVacation.setAttribute("_id", id);
+      addVacation.disabled = true;
+      editVacation.disabled = false;
+    });
+    doneBtn.addEventListener(`click`, (e) => {
+      if (e) {
+        e.preventDefault();
+      }
+      const vacationToRemove = e.currentTarget.parentNode;
+      console.log(vacationToRemove);
 
-    const changeBtn = createElement("button", divApplication, "Change", [
-      "change-btn",
-    ]);
-    changeBtn.addEventListener("click", changeVacation);
+      const httpHeaders = {
+        method: "DELETE",
+      };
 
-    const doneBtn = createElement("button", divApplication, "Done", [
-      "done-btn",
-    ]);
-    doneBtn.addEventListener("click", doneVacation);
-    list.appendChild(divApplication);
+      fetch(`${API_URL}${vacationToRemove.id}`, httpHeaders)
+        .then(load())
+        .catch((err) => console.error(err));
+    });
   });
-}
-function addVacation(event) {
-  if (event) {
-    event.preventDefault();
-  }
+  addVacation.addEventListener(`click`, async (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+    debugger;
+    const httpHeaders = {
+      method: "PUT",
+      body: JSON.stringify({
+        name: inputSelectors.name.value,
+        days: inputSelectors.days.value,
+        date: inputSelectors.date.value,
+      }),
+    };
+    fetch(`${API_URL}`, httpHeaders)
+      .then(load())
+      .catch((err) => console.error(err));
 
-  const httpHeaders = {
-    method: "POST",
-    body: JSON.stringify({
-      name: inputSelectors.name.value,
-      days: inputSelectors.days.value,
-      date: inputSelectors.date.value,
-    }),
-  };
-  fetch(`${API_URL}`, httpHeaders)
-    .then(loadVacations())
-    .catch((err) => console.error(err));
-
-  Object.values(inputSelectors).forEach((input) => (input.value = ""));
-}
-function editVacation(event) {
-  if (event) {
-    event.preventDefault();
-  }
-  const id = event.currentTarget.getAttribute("_id");
-  console.log(event.currentTarget);
-  const httpHeaders = {
-    method: "PUT",
-    body: JSON.stringify({
-      name: inputSelectors.name.value,
-      days: inputSelectors.days.value,
-      date: inputSelectors.date.value,
-      _id: id,
-    }),
-  };
-
-  fetch(`${API_URL}${id}`, httpHeaders)
-    .then(loadVacations())
-    .catch((err) => console.error(err));
-
-  actionBtn.editBtn.disabled = true;
-  actionBtn.addBtn.disabled = false;
-}
-function changeVacation(event) {
-  const id = event.currentTarget.parentNode.id;
-  const currentVacation = vacations.find((x) => x._id == id);
-  Object.keys(inputSelectors).forEach((key) => {
-    inputSelectors[key].value = currentVacation[key];
+    Object.values(inputSelectors).forEach((input) => (input.value = ""));
   });
+  editVacation.addEventListener(`click`, (e) => {
+    if (e) {
+      e.preventDefault();
+    }
+    const id = e.currentTarget.getAttribute("_id");
+    const httpHeaders = {
+      method: "PUT",
+      body: JSON.stringify({
+        name: inputSelectors.name.value,
+        days: inputSelectors.days.value,
+        date: inputSelectors.date.value,
+        _id: id,
+      }),
+    };
 
-  event.currentTarget.parentNode.remove();
-  vacations.splice(vacations.indexOf(currentVacation), 1);
-  actionBtn.editBtn.setAttribute("_id", id);
-  actionBtn.addBtn.disabled = true;
-  actionBtn.editBtn.disabled = false;
-}
-function doneVacation(event) {
-  if (event) {
-    event.preventDefault();
-  }
-  const vacationToRemove = event.currentTarget.parentNode;
+    fetch(`${API_URL}${id}`, httpHeaders)
+      .then(load())
+      .catch((err) => console.error(err));
 
-  const httpHeaders = {
-    method: "DELETE",
-  };
-
-  fetch(`${API_URL}${vacationToRemove.id}`, httpHeaders)
-    .then(loadVacations())
-    .catch((err) => console.error(err));
+    editVacation.disabled = true;
+    addVacation.disabled = false;
+  });
 }
 function createElement(
   type,
-  parentNode,
-  content,
-  classes,
+  textContent,
   id,
-  attributes,
-  useInnerHtml
+  classes,
+  parentNode,
+  innerHTML,
+  attributes
 ) {
-  const htmlElement = document.createElement(type);
-
-  if (content && useInnerHtml) {
-    htmlElement.innerHTML = content;
-  } else if (content && type !== "input") {
-    htmlElement.textContent = content;
-  }
-
-  if (content && type === "input") {
-    htmlElement.value = content;
-  }
-
+  let element = document.createElement(type);
   if (classes && classes.length > 0) {
-    htmlElement.classList.add(...classes);
+    element.classList.add(...classes);
   }
-
   if (id) {
-    htmlElement.id = id;
+    element.setAttribute(`id`, id);
   }
-
+  if (innerHTML && textContent) {
+    element.innerHTML = textContent;
+  } else if (textContent) {
+    element.textContent = textContent;
+  }
+  if (parentNode) {
+    parentNode.appendChild(element);
+  }
   if (attributes) {
-    for (const attribute in attributes) {
-      htmlElement.setAttribute(attribute, attributes[attribute]);
+    for (const key in attributes) {
+      htmlElement.setAttribute(key, attributes[key]);
     }
   }
-
-  if (parentNode) {
-    parentNode.appendChild(htmlElement);
-  }
-
-  return htmlElement;
+  return element;
 }
