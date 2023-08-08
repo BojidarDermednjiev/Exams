@@ -6,7 +6,7 @@ function solve(inputFromConsole) {
     if (!acc.hasOwnProperty(name)) {
       acc[name] = [];
     }
-    acc[name] = { name, fuel: Number(fuel), position: Number(position) };
+    acc[name] = { name, fuel: parseFloat(fuel), position: parseInt(position) };
     return acc;
   }, {});
 
@@ -21,24 +21,24 @@ function solve(inputFromConsole) {
     if (currCommand === `Finish`) {
       return;
     }
-    commandManipulation[currCommand](...input);
+
+    if (commandManipulation.hasOwnProperty(currCommand)) {
+      commandManipulation[currCommand](...input);
+    }
   });
   function stopForFuel(rider, minFuel, changePosition) {
     const findRider = riders[rider];
-    if (findRider.fuel < minFuel) {
-      findRider.position = changePosition;
+    if (findRider.fuel < parseFloat(minFuel)) {
+      findRider.position = parseInt(changePosition);
       console.log(
         `${rider} stopped to refuel but lost his position, now he is ${changePosition}.`
       );
       return;
-    } else {
-      console.log(`${rider} does not need to stop for fuel!`);
     }
+    console.log(`${rider} does not need to stop for fuel!`);
   }
   function overtaking(firstRider, secondRider) {
-    const riderOne = riders[firstRider];
-    const riderTwo = riders[secondRider];
-    if (riderOne.position < riderTwo.position) {
+    if (riders[firstRider].position < riders[secondRider].position) {
       const temp = riders[firstRider].position;
       riders[firstRider].position = riders[secondRider].position;
       riders[secondRider].position = temp;
@@ -46,18 +46,16 @@ function solve(inputFromConsole) {
     }
   }
   function engineFail(rider, lapsLeft) {
-    if (lapsLeft > 0) {
-      delete riders[rider];
-      console.log(
-        `${rider} is out of the race because of a technical issue, ${lapsLeft} laps before the finish.`
-      );
-    }
+    delete riders[rider];
+    console.log(
+      `${rider} is out of the race because of a technical issue, ${lapsLeft} laps before the finish.`
+    );
   }
   Object.values(riders).sort((a, b) => a.position - b.position);
   let entries = Object.entries(riders);
   for (const [name, info] of entries) {
-    console.log(`${name}`);
-    console.log(` Final position ${info.position}`);
+    console.log(`${name}\nFinal position: ${info.position}`);
+    delete riders[name];
   }
 }
 solve([
@@ -66,6 +64,17 @@ solve([
   "Marc Marquez|90|2",
   "Jorge Lorenzo|80|3",
   "StopForFuel - Valentino Rossi - 50 - 1",
+  "Overtaking - Marc Marquez - Jorge Lorenzo",
+  "EngineFail - Marc Marquez - 10",
+  "Finish",
+]);
+solve([
+  "4",
+  "Valentino Rossi|100|1",
+  "Marc Marquez|90|3",
+  "Jorge Lorenzo|80|4",
+  "Johann Zarco|80|2",
+  "StopForFuel - Johann Zarco - 90 - 5",
   "Overtaking - Marc Marquez - Jorge Lorenzo",
   "EngineFail - Marc Marquez - 10",
   "Finish",

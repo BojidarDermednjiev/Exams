@@ -10,8 +10,8 @@ const inputSelectors = {
 };
 const addVacation = document.getElementById(`add-vacation`);
 const editVacation = document.getElementById(`edit-vacation`);
-loadVacations.addEventListener(`click`, load);
-async function load(e) {
+loadVacations.addEventListener(`click`, loadInfo);
+async function loadInfo(e) {
   e.preventDefault();
   list.innerHTML = "";
   const responce = await (await fetch(API_URL)).json();
@@ -53,19 +53,18 @@ async function load(e) {
       addVacation.disabled = true;
       editVacation.disabled = false;
     });
-    doneBtn.addEventListener(`click`, (e) => {
+    doneBtn.addEventListener(`click`, async (e) => {
       if (e) {
         e.preventDefault();
       }
       const vacationToRemove = e.currentTarget.parentNode;
-      console.log(vacationToRemove);
 
       const httpHeaders = {
         method: "DELETE",
       };
 
       fetch(`${API_URL}${vacationToRemove.id}`, httpHeaders)
-        .then(load())
+        .then(loadInfo())
         .catch((err) => console.error(err));
     });
   });
@@ -73,7 +72,6 @@ async function load(e) {
     if (e) {
       e.preventDefault();
     }
-    debugger;
     const httpHeaders = {
       method: "PUT",
       body: JSON.stringify({
@@ -83,7 +81,7 @@ async function load(e) {
       }),
     };
     fetch(`${API_URL}`, httpHeaders)
-      .then(load())
+      .then(loadInfo())
       .catch((err) => console.error(err));
 
     Object.values(inputSelectors).forEach((input) => (input.value = ""));
@@ -104,7 +102,7 @@ async function load(e) {
     };
 
     fetch(`${API_URL}${id}`, httpHeaders)
-      .then(load())
+      .then(loadInfo())
       .catch((err) => console.error(err));
 
     editVacation.disabled = true;
