@@ -32,15 +32,14 @@
         }
         public string UploadVehicle(string vehicleType, string brand, string model, string licensePlateNumber)
         {
-            if (!new string[] { "CargoVan", "PassengerCar" }.Contains(vehicleType))
-                return string.Format(OutputMessages.VehicleTypeNotAccessible, vehicleType);
             if (vehicles.FindById(licensePlateNumber) != default)
                 return string.Format(OutputMessages.LicensePlateExists, licensePlateNumber);
-            IVehicle vehicle = null;
-            if (vehicleType == nameof(CargoVan))
-                vehicle = new CargoVan(brand, model, licensePlateNumber);
-            else if (vehicleType == nameof(PassengerCar))
-                vehicle = new PassengerCar(brand, model, licensePlateNumber);
+            IVehicle vehicle = vehicleType switch
+            {
+                nameof(CargoVan) => new CargoVan(brand, model, licensePlateNumber),
+                nameof(PassengerCar) => new PassengerCar(brand, model, licensePlateNumber),
+                _ => throw new ArgumentException(string.Format(OutputMessages.VehicleTypeNotAccessible, vehicleType)),
+            };
             vehicles.AddModel(vehicle);
             return string.Format(OutputMessages.VehicleAddedSuccessfully, brand, model, licensePlateNumber);
         }
