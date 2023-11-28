@@ -106,9 +106,9 @@ namespace Invoices.DataProcessor
                     continue;
                 }
                 Product product = mapper.Map<Product>(importProductDto);
-                foreach (var c in importProductDto.Clients.Distinct())
+                foreach (var clientId in importProductDto.Clients.Distinct())
                 {
-                    Client client = context.Clients.Find(c)!;
+                    Client client = context.Clients.Find(clientId)!;
 
                     // ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract
 
@@ -120,12 +120,17 @@ namespace Invoices.DataProcessor
 
                     product.ProductsClients.Add(new ProductClient()
                     {
-                        Client = client
+                        ClientId = clientId,
+                        Client = client,
+                        Product = product,
+                        ProductId = product.Id
                     });
                 }
+
                 products.Add(product);
                 sb.AppendLine(string.Format(SuccessfullyImportedProducts, product.Name, product.ProductsClients.Count));
             }
+
             context.Products.AddRange(products);
             context.SaveChanges();
             return sb.ToString().TrimEnd();

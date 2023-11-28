@@ -93,8 +93,8 @@ Successfully imported invoice with number 1372021149.
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported invoice with number 1275892939.
 Invalid data!
-Successfully imported invoice with number 1037181326.
-Successfully imported invoice with number 1132771123.
+Invalid data!
+Invalid data!
+Invalid data!
 Invalid data!
