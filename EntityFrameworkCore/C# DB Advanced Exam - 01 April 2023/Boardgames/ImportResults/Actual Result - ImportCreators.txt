@@ -7,7 +7,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Debra Edwards with 0 boardgames.
+Successfully imported creator – Debra Edwards with 4 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -19,7 +19,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Vance Welch with 0 boardgames.
+Successfully imported creator – Vance Welch with 3 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -27,7 +27,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Tatum Hobbs with 2 boardgames.
+Successfully imported creator – Tatum Hobbs with 6 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -38,7 +38,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Craig Clayton with 0 boardgames.
+Successfully imported creator – Craig Clayton with 3 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -50,7 +50,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Cole Soto with 0 boardgames.
+Successfully imported creator – Cole Soto with 2 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -60,7 +60,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Lenore Gamble with 0 boardgames.
+Successfully imported creator – Lenore Gamble with 4 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -74,7 +74,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Hope Horton with 0 boardgames.
+Successfully imported creator – Hope Horton with 3 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -83,7 +83,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Shaine Greer with 0 boardgames.
+Successfully imported creator – Shaine Greer with 5 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -93,7 +93,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Mia Short with 1 boardgames.
+Successfully imported creator – Mia Short with 4 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -101,7 +101,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Regina Bailey with 0 boardgames.
+Successfully imported creator – Regina Bailey with 5 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -109,14 +109,14 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Desirae Talley with 0 boardgames.
+Successfully imported creator – Desirae Talley with 5 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Cade O'Neill with 1 boardgames.
+Successfully imported creator – Cade O'Neill with 6 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -127,7 +127,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Belle Morales with 0 boardgames.
+Successfully imported creator – Belle Morales with 2 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -137,14 +137,14 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Fuller Bridges with 0 boardgames.
+Successfully imported creator – Fuller Bridges with 4 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Hop Griffin with 0 boardgames.
+Successfully imported creator – Hop Griffin with 6 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -153,14 +153,14 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Carl Lowe with 0 boardgames.
+Successfully imported creator – Carl Lowe with 4 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Naida Herrera with 1 boardgames.
+Successfully imported creator – Naida Herrera with 6 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -168,7 +168,7 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Rowan Carney with 0 boardgames.
+Successfully imported creator – Rowan Carney with 5 boardgames.
 Invalid data!
 Invalid data!
 Invalid data!
@@ -178,5 +178,5 @@ Invalid data!
 Invalid data!
 Invalid data!
 Invalid data!
-Successfully imported creator – Hop Key with 0 boardgames.
+Successfully imported creator – Hop Key with 4 boardgames.
 Invalid data!

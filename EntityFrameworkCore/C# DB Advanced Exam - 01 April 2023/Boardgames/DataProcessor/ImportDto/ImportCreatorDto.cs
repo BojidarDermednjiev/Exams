@@ -21,6 +21,6 @@
         public string LastName { get; set; } = null!;
 
         [XmlArray("Boardgames")]
-        public ImportBoardgameDto[] Boardgames { get; set; } = null!;
+        public List<ImportBoardgameDto> Boardgames { get; set; } = null!;
     }
 }

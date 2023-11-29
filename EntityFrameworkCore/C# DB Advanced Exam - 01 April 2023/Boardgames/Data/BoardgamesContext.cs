@@ -18,7 +18,7 @@
         public DbSet<Boardgame> Boardgames { get; set; } = null!;
         public DbSet<Seller> Sellers { get; set; } = null!;
         public DbSet<Creator> Creators { get; set; } = null!;
-        public BoardgameSeller BoardgamesSellers { get; set; } = null!;
+        public DbSet<BoardgameSeller> BoardgamesSellers { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -39,23 +39,18 @@ namespace Boardgames.DataProcessor
                     continue;
                 }
 
-                Creator creator = mapper.Map<Creator>(importCreatorDto);
-                foreach (var importBoardgameDto in importCreatorDto.Boardgames)
-                {
-                    if (!IsValid(importBoardgameDto))
-                    {
-                        sb.AppendLine(ErrorMessage);
-                        creator.Boardgames = new HashSet<Boardgame>();
-                        continue;
-                    }
+                int boardGamesRemoved =
+                    importCreatorDto.Boardgames.RemoveAll(b => !IsValid(b) || string.IsNullOrEmpty(b.Name));
 
-                    Boardgame boardgame = mapper.Map<Boardgame>(importBoardgameDto);
-                    creator.Boardgames.Add(boardgame);
+                for (int i = 0; i < boardGamesRemoved; i++)
+                {
+                    sb.AppendLine("Invalid data!");
                 }
 
+                Creator creator = mapper.Map<Creator>(importCreatorDto);
+
                 creators.Add(creator);
-                sb.AppendLine(string.Format(SuccessfullyImportedCreator, creator.FirstName, creator.LastName,
-                    creator.Boardgames.Count));
+                sb.AppendLine(string.Format(SuccessfullyImportedCreator, creator.FirstName, creator.LastName, creator.Boardgames.Count));
             }
 
             context.Creators.AddRange(creators);
@@ -91,10 +86,9 @@ namespace Boardgames.DataProcessor
                     {
                         Boardgame = boardgame
                     });
-
-                    sellers.Add(seller);
-                    sb.AppendLine(string.Format(SuccessfullyImportedSeller, seller.Name, seller.BoardgamesSellers.Count));
                 }
+                sellers.Add(seller);
+                sb.AppendLine(string.Format(SuccessfullyImportedSeller, seller.Name, seller.BoardgamesSellers.Count));
             }
 
             context.Sellers.AddRange(sellers);

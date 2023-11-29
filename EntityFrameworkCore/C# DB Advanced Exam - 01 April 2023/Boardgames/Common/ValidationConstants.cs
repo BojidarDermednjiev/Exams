@@ -16,8 +16,7 @@
         public const int SellerNameMaxLength = 20;
         public const int SellerAddressNameMinLength = 2;
         public const int SellerAddressNameMaxLength = 30;
-
-        public const string SellerWebsiteRegex = @"^(www.[a-zA-Z0-9-]+).com$";
+        public const string SellerWebsiteRegex = @"(www\.[a-zA-Z0-9\-]{2,256}\.com)";
         // Creator
         public const int CreatorFirstNameMinLength = 2;
         public const int CreatorFirstNameMaxLength = 7;
