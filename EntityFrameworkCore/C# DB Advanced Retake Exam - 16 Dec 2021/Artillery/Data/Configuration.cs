@@ -2,6 +2,6 @@
 {
     public static class Configuration
     {
-        public static string ConnectionString = @"Server=ADMINISTRATOR\SQLEXPRESS;Database=Artillery;Integrated Security=True;Encrypt=False";
+        public static string ConnectionString = @"Server=(localdb)\MSSQLLocalDB;Database=Artillery;Integrated Security=True;Encrypt=False";
     }
 }

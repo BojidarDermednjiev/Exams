@@ -1,11 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-
-namespace Artillery.DataProcessor
+﻿namespace Artillery.DataProcessor
 {
-    using Artillery.Data.Models;
-    using Artillery.Data.Models.Enums;
+    using AutoMapper;
+    using Newtonsoft.Json;
+    using AutoMapper.QueryableExtensions;
+    using Microsoft.EntityFrameworkCore;
+
     using Data;
+    using ExportDto;
+    using Utilities;
+
 
     public class Serializer
     {
@@ -37,7 +40,20 @@ namespace Artillery.DataProcessor
 
         public static string ExportGuns(ArtilleryContext context, string manufacturer)
         {
-            throw new NotImplementedException();
+            XmlHelper xmlHelper = new XmlHelper();
+            IMapper mapper = InitializeAutoMapper();
+            ExportGunDto[] exportGunDtos = context.Guns
+                .Where(g => g.Manufacturer.ManufacturerName == manufacturer)
+                .AsNoTracking()
+                .ProjectTo<ExportGunDto>(mapper.ConfigurationProvider)
+                .OrderBy(g => g.BarrelLength)
+                .ToArray();
+            return xmlHelper.Serialize<ExportGunDto[]>(exportGunDtos, "Guns");
         }
+        private static IMapper InitializeAutoMapper()
+            => new Mapper(new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<ArtilleryProfile>();
+            }));
     }
 }

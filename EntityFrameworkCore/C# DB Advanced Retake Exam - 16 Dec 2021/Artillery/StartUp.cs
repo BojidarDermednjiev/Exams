@@ -57,9 +57,9 @@
             Console.WriteLine(exportShells);
             File.WriteAllText(exportDir + "Actual Result - ExportShells.json", exportShells);
 
-            //var exportActors = DataProcessor.Serializer.ExportGuns(context, "Krupp");
-            //Console.WriteLine(exportActors);
-            //File.WriteAllText(exportDir + "Actual Result - ExportGuns.xml", exportActors);
+            var exportActors = DataProcessor.Serializer.ExportGuns(context, "Krupp");
+            Console.WriteLine(exportActors);
+            File.WriteAllText(exportDir + "Actual Result - ExportGuns.xml", exportActors);
         }
 
         private static void ResetDatabase(ArtilleryContext context, bool shouldDropDatabase = false)
