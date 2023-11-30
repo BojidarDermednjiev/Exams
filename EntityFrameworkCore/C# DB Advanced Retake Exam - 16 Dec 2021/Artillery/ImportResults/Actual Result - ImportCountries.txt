@@ -1,4 +1,4 @@
-﻿Successfully import Afghanistan with 1697064 army personnel.
+Successfully import Afghanistan with 1697064 army personnel.
 Invalid data.
 Successfully import Albania with 6296389 army personnel.
 Invalid data.
