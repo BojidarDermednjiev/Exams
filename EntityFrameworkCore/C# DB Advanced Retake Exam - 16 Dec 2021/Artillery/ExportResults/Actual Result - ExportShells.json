@@ -160,12 +160,6 @@
       },
       {
         "GunType": "AntiAircraftGun",
-        "GunWeight": 1088872,
-        "BarrelLength": 4.21,
-        "Range": "Long-range"
-      },
-      {
-        "GunType": "AntiAircraftGun",
         "GunWeight": 1006476,
         "BarrelLength": 10.21,
         "Range": "Long-range"

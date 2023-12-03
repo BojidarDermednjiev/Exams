@@ -1,17 +1,17 @@
-﻿using System.Text;
-using Artillery.Data.Models;
-using Artillery.Data.Models.Enums;
-using Artillery.DataProcessor.ImportDto;
-using Castle.Core.Internal;
-using Newtonsoft.Json;
-
-namespace Artillery.DataProcessor
+﻿namespace Artillery.DataProcessor
 {
+    
     using AutoMapper;
+    using System.Text;
+    using Newtonsoft.Json;
     using System.ComponentModel.DataAnnotations;
 
     using Data;
+    using ImportDto;
     using Utilities;
+    using Data.Models;
+    using Data.Models.Enums;
+
 
 
     public class Deserializer
@@ -127,7 +127,7 @@ namespace Artillery.DataProcessor
                   });
                }
                guns.Add(gun);
-               sb.AppendLine(string.Format(SuccessfulImportGun, gun.GunType, gun.GunWeight, gun.BarrelLength));
+               sb.AppendLine(string.Format(SuccessfulImportGun, gun.GunType.ToString(), gun.GunWeight, gun.BarrelLength));
            }
            context.Guns.AddRange(guns);
            context.SaveChanges();

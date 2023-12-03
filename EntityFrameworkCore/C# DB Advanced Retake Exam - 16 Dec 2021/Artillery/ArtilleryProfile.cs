@@ -17,7 +17,8 @@ namespace Artillery
                 .ForMember(d => d.Country, opt => opt.MapFrom(s => s.CountryName))
                 .ForMember(d => d.ArmySize, opt => opt.MapFrom(s => s.ArmySize));
             // Gun
-            this.CreateMap<ImportGunDto, Gun>();
+            this.CreateMap<ImportGunDto, Gun>()
+                .ForMember(d => d.GunType, opt => opt.MapFrom(s => s.GunType.ToString()));
             this.CreateMap<Gun, ExportGunDto>()
                 .ForMember(d => d.Manufacturer, opt => opt.MapFrom(s => s.Manufacturer.ManufacturerName))
                 .ForMember(d => d.GunWeight, opt => opt.MapFrom(s => s.GunWeight))

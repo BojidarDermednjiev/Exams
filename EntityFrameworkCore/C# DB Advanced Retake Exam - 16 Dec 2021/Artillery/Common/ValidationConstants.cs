@@ -1,4 +1,4 @@
-﻿x`namespace Artillery.Common
+﻿namespace Artillery.Common
 {
     public static class ValidationConstants
     {
@@ -23,6 +23,6 @@
         public const double GunBarrelMinLength = 2.00;
         public const double GunBarrelMaxLength = 35.00;
         public const int GunMinRange = 1;
-        public const int GunMaxRange = 1_00_000;
+        public const int GunMaxRange = 100_000;
     }
 }
