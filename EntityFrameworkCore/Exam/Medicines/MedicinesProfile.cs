@@ -4,8 +4,7 @@
 
     using Data.Models;
     using DataProcessor.ImportDtos;
-    using Medicines.DataProcessor.ExportDtos;
-    using System.Xml.Linq;
+    using DataProcessor.ExportDtos;
 
     public class MedicinesProfile : Profile
     {
