@@ -1,11 +1,10 @@
-﻿using Cadastre.Utilities;
-using Microsoft.EntityFrameworkCore;
-
-namespace Cadastre.DataProcessor
+﻿namespace Cadastre.DataProcessor
 {
     using Newtonsoft.Json;
+    using Microsoft.EntityFrameworkCore;
 
     using Data;
+    using Utilities;
     using ExportDtos;
 
     public class Serializer
@@ -13,6 +12,7 @@ namespace Cadastre.DataProcessor
         public static string ExportPropertiesWithOwners(CadastreContext dbContext)
         {
             string dateString = "01/01/2000";
+
             if (!DateTime.TryParse(dateString, out DateTime dateTime)) { }
 
             var properties = dbContext.Properties

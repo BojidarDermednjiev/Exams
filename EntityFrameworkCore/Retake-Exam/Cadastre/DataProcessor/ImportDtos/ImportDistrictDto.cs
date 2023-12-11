@@ -1,17 +1,15 @@
-﻿using Cadastre.Data.Enumerations;
-
-namespace Cadastre.DataProcessor.ImportDtos
+﻿namespace Cadastre.DataProcessor.ImportDtos
 {
     using System.Xml.Serialization;
     using System.ComponentModel.DataAnnotations;
     
     using Common;
+    using Data.Enumerations;
 
     [XmlType("District")]
     public class ImportDistrictDto
     {
         [XmlAttribute("Region")]
-        //[Range(ValidationConstants.DistrictRegionMinValue, ValidationConstants.DistrictRegionMaxValue)]
         public Region Region { get; set; }
 
         [XmlElement("Name")]

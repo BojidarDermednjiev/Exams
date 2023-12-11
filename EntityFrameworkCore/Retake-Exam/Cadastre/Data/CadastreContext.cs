@@ -1,8 +1,9 @@
-﻿using Cadastre.Data.Models;
-
-namespace Cadastre.Data
+﻿namespace Cadastre.Data
 {
     using Microsoft.EntityFrameworkCore;
+    
+    using Models;
+
     public class CadastreContext : DbContext
     {
         public CadastreContext()
@@ -24,11 +25,9 @@ namespace Cadastre.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-            {
                 optionsBuilder
                     .UseSqlServer(Configuration.ConnectionString)
                     .UseLazyLoadingProxies();
-            }
 
             base.OnConfiguring(optionsBuilder);
         }

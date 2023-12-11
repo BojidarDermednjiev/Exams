@@ -1,16 +1,15 @@
-﻿using Cadastre.Data.Enumerations;
-using Newtonsoft.Json;
-
-namespace Cadastre.DataProcessor
+﻿namespace Cadastre.DataProcessor
 {
     using AutoMapper;
     using System.Text;
     using System.ComponentModel.DataAnnotations;
-
+    using Newtonsoft.Json;
+    
     using Data;
     using Utilities;
     using ImportDtos;
     using Data.Models;
+    using Data.Enumerations;
     using System.Globalization;
 
     public class Deserializer
@@ -88,7 +87,7 @@ namespace Cadastre.DataProcessor
         {
 
             StringBuilder sb = new StringBuilder();
-            ImportCitizenDto[] citizenDtos = JsonConvert.DeserializeObject<ImportCitizenDto[]>(jsonDocument);
+            ImportCitizenDto[] citizenDtos = JsonConvert.DeserializeObject<ImportCitizenDto[]>(jsonDocument)!;
             ICollection<Citizen> citizens = new HashSet<Citizen>();
             foreach (var importCitizenDto in citizenDtos)
             {
